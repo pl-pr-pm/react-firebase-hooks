@@ -1,10 +1,13 @@
 
 import { InputGroup, Form, Input, Button} from "reactstrap";
-import { useState, useCallback} from "react";
+import { useState, useContext, useCallback} from "react";
+import { TodosContext } from "../contexts/Todoscontext";
 
 
 
-export const TodoForm = ({addTodo}) => {
+export const TodoForm = () => {
+  
+  const { addTodo } = useContext(TodosContext);
 
   const [value, setValue] = useState("");
 
